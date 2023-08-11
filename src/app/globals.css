@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: rgb(255, 255, 255);
+  --foreground-contrast-rgb: rgb(56, 56, 56);
+  --background-start-rgb: rgb(0, 0, 0);
+  --background-end-rgb: rgb(0, 0, 0);
+
+  --primary-900: rgb(0, 160, 235);
+  --primary-700: rgb(67, 195, 255);
+  --secondary-900: rgb(241, 0, 52);
+  --secondary-700: rgb(226, 27, 87);
+  /*  */
+  --success: rgb(32, 184, 78);
+  --error: rgb(240, 37, 81);
+  --warn: rgb(240, 210, 44);
+  --info: rgb(44, 181, 245);
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+  background: #1d1d1d;
+  behavior: smooth;
+}
+::-webkit-scrollbar-thumb{
+  background: #555555;
+}
+@media screen and (max-width:720px) {
+  ::-webkit-scrollbar{
+    width: 0px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: #000;
+  }
+}
+
+body {
+  color: var(--foreground-rgb);
+  background:var(--background-start-rgb)  ;
+}

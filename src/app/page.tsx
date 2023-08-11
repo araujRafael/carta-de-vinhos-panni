@@ -4,8 +4,8 @@ import CarrouselComponent from "@/components/Organisms/CarrouselComponent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Avalia produtos',
-  description: ''
+  title: 'Carta de vinhos | Panni',
+  description: 'os melhores vinhos da panni aqui'
 }
 
 export default async function Home() {

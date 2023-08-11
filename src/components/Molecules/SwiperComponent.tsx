@@ -38,7 +38,7 @@ export default function SwiperComponent<T extends unknown>({
       >
         {
           data?.map((item, index) => (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               {renderItems(item, index)}
             </SwiperSlide>
           ))

@@ -20,8 +20,8 @@ export default async function Home() {
         </h1>
         <ul className={`w-full h-full flex flex-col gap-5`}>
           {
-            Array.from({ length: 20 }).map(x => (
-              <li className={`w-full h-min`}>
+            Array.from({ length: 20 }).map((x, i) => (
+              <li key={i.toString()} className={`w-full h-min`}>
                 <Card />
               </li>
             ))

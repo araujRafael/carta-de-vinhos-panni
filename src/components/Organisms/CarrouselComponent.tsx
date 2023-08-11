@@ -22,10 +22,9 @@ export default function CarrouselComponent() {
             className={`w-full min-h-full h-full rounded-md object-cover`}
           />
         )}
-        children={
-          (swiperRef) => <SwiperButtons lengthData={0} swiperRef={swiperRef} />
-        }
-      />
+      >
+        {(swiperRef) => <SwiperButtons lengthData={0} swiperRef={swiperRef} />}
+      </SwiperComponent>
     </div>
   )
 }

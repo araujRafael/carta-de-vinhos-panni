@@ -31,7 +31,7 @@ export default function VinoId() {
               Almaden Tinto Cabernet Sauvignon seco
             </h1>
             <p className={`text-sm`}>
-              Origem: Passo da Cruz, Sant'Ana do Livramento - RS
+              Origem: Passo da Cruz, SantAna do Livramento - RS
             </p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eligendi, earum dolor ea est aperiam eos adipisci placeat, quisquam corrupti vero tempora fugit enim, asperiores quo saepe cum neque.

@@ -1,7 +1,6 @@
 import { VinhosField } from "@/@types/fields-airtable";
 import { getAirTableData } from "@/actions/getTableWines";
 import { Container } from "@/components/Atom/Container";
-import DebuggerClient from "@/components/Atom/DebuggerClient";
 import Card from "@/components/Molecules/Card";
 import { Metadata } from "next";
 
@@ -27,7 +26,6 @@ export default async function Home() {
           w-full h-full flex flex-col gap-5
         `}>
           {
-            // Array.from({ length: 20 })
             table?.map(({ fields, createdTime, id }, i) => (
               <li key={i.toString()} className={`w-full h-min`}>
                 <Card key={id} id={id} data={fields} created={createdTime} />

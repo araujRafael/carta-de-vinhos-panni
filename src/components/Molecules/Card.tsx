@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ id, created, data: {
       flex flex-row
     `}>
       <Image
-        src={imagem[0].url}
+        src={imagem[0].url || '/images/logo.png'}
         alt={nome}
         width={100}
         height={100}

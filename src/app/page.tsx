@@ -18,7 +18,6 @@ export default async function Home() {
   // Home ***************************************************************
   return (
     <div className="!h-full !w-full">
-      {/* <DebuggerClient data={table?.[0].fields.codigo} /> */}
       <Container className={`h-full w-full 
       flex flex-col items-center`}>
         <h1 className={`text-2xl mb-8`}>

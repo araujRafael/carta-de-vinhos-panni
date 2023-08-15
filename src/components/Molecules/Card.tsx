@@ -1,10 +1,21 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { HTMLAttributes } from 'react'
 import { BiDotsHorizontalRounded } from 'react-icons/bi'
 import { useRouter } from 'next/navigation'
+import { VinhosField } from '@/@types/fields-airtable'
 
-export default function Card() {
+
+interface CardProps {
+  data: VinhosField
+  created: string
+  id: string
+}
+
+const Card: React.FC<CardProps> = ({ id, created, data: {
+  "cor vinho": cor, "em estoque": estoque, codigo,
+  desconto, descrição, imagem, nome, origem, preço, uva,
+} }) => {
   const { push } = useRouter()
 
   return (
@@ -13,8 +24,8 @@ export default function Card() {
       flex flex-row
     `}>
       <Image
-        src={'/images/vino/almaden-vela.jpg'}
-        alt={'almaden'}
+        src={imagem[0].url}
+        alt={nome}
         width={100}
         height={100}
         className='h-full min-w-[100px] w-[100px] object-cover'
@@ -23,15 +34,15 @@ export default function Card() {
         ml-2 w-full flex flex-col justify-between
       `}>
         <h1 className={`text-lg font-bold`}>
-          Almaden Tinto Cabernet Sauvignon seco
+          {nome}
         </h1>
         <div className={`w-full !max-h-min !h-min flex 
         justify-between items-center`}>
           <span className={`font-bold`}>
-            R$ 49,90
+            R$ {preço.toFixed(2)}
           </span>
           <span className='mx-1 cursor-pointer'
-            onClick={() => push(`/vino/${123}`)}
+            onClick={() => push(`/vino/${id}`)}
           >
             <BiDotsHorizontalRounded size={35} />
           </span>
@@ -40,3 +51,4 @@ export default function Card() {
     </div>
   )
 }
+export default Card

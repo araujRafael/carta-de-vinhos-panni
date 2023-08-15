@@ -1,14 +1,20 @@
 import React from 'react'
-import { useParams, useRouter } from 'next/navigation'
-import Image from 'next/image'
 import { Container } from '@/components/Atom/Container'
-import { BiArrowBack } from 'react-icons/bi'
-import { Metadata } from 'next'
+import { Metadata, MetadataRoute } from 'next'
 import VinoId from '@/components/Organisms/VinoId'
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
 
-export const metadata: Metadata = {
-  title: 'Almaden Tinto Cabernet Sauvignon seco | Panni',
-  description: ''
+type metaProps = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata({ params, searchParams }: metaProps) {
+
+  return {
+    title: params.id,
+    description: ''
+  }
 }
 
 export default function VinoIdPage() {
@@ -18,8 +24,7 @@ export default function VinoIdPage() {
   return (
     <div className={`w-full h-full !p-0`} >
       <Container className={`flex flex-col gap-2`}>
-        <VinoId
-        />
+        <VinoId />
       </Container>
     </div>
   )

@@ -17,7 +17,9 @@ const nextConfig = {
         ],
     },
     env:{
-        NEXT_URL: process.env.NEXT_URL
+        NEXT_URL: process.env.NEXT_URL,
+        AIRTABLE_SECRET_API_TOKEN: process.env.AIRTABLE_SECRET_API_TOKEN,
+        AIRTABLE_BASE_ID: process.env.AIRTABLE_BASE_ID,
     },
     experimental:{
         serverActions:true

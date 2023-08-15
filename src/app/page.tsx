@@ -1,7 +1,10 @@
+import { VinhosField } from "@/@types/fields-airtable";
+import { getAirTableData } from "@/actions/getTableWines";
 import { Container } from "@/components/Atom/Container";
+import DebuggerClient from "@/components/Atom/DebuggerClient";
 import Card from "@/components/Molecules/Card";
-import CarrouselComponent from "@/components/Organisms/CarrouselComponent";
 import { Metadata } from "next";
+
 
 export const metadata: Metadata = {
   title: 'Carta de vinhos | Panni',
@@ -9,20 +12,26 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
+  const table = await getAirTableData<VinhosField>('vinhos')
+
 
   // Home ***************************************************************
   return (
     <div className="!h-full !w-full">
+      {/* <DebuggerClient data={table?.[0].fields.codigo} /> */}
       <Container className={`h-full w-full 
       flex flex-col items-center`}>
         <h1 className={`text-2xl mb-8`}>
           CARTA DE VINHOS PANNI
         </h1>
-        <ul className={`w-full h-full flex flex-col gap-5`}>
+        <ul className={`
+          w-full h-full flex flex-col gap-5
+        `}>
           {
-            Array.from({ length: 20 }).map((x, i) => (
+            // Array.from({ length: 20 })
+            table?.map(({ fields, createdTime, id }, i) => (
               <li key={i.toString()} className={`w-full h-min`}>
-                <Card />
+                <Card key={id} id={id} data={fields} created={createdTime} />
               </li>
             ))
           }

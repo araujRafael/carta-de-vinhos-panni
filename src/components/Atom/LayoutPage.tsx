@@ -1,11 +1,8 @@
 'use client'
 import { Box } from "@chakra-ui/react"
-import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ReactNode } from "react"
 import { Container } from "./Container"
-import Button from "./Button"
-import { useLikeContext } from "@/contexts/LikeContext"
 import Image from "next/image"
 
 interface LayoutPageProps {
@@ -15,7 +12,6 @@ interface LayoutPageProps {
 export const LayoutPage: React.FC<LayoutPageProps> = ({
 	children
 }) => {
-	const { saldo } = useLikeContext()
 	const pathname = usePathname()
 	const inPathname = (path: string) => pathname === path
 

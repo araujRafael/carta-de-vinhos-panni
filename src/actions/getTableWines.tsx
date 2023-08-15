@@ -24,7 +24,7 @@ export async function getAirTableData<T = unknown>
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        cache: 'force-cache',
+        cache: 'no-store',
       });
     const statusText = data.statusText
     if (!data.ok) LogError(statusText)

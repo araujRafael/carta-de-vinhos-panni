@@ -26,11 +26,12 @@ export default async function Home() {
           w-full h-full flex flex-col gap-5
         `}>
           {
-            table?.map(({ fields, createdTime, id }, i) => (
-              <li key={i.toString()} className={`w-full h-min`}>
-                <Card key={id} id={id} data={fields} created={createdTime} />
-              </li>
-            ))
+            table?.filter(x => x.fields["em estoque"])
+              .map(({ fields, createdTime, id }, i) => (
+                <li key={i.toString()} className={`w-full h-min`}>
+                  <Card key={id} id={id} data={fields} created={createdTime} />
+                </li>
+              ))
           }
         </ul>
       </Container>

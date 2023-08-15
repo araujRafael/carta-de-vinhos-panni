@@ -23,15 +23,22 @@ const Card: React.FC<CardProps> = ({ id, created, data: {
       w-full min-h-[100px] max-h-[100px] h-[100px]
       flex flex-row
     `}>
-      <Image
-        src={imagem?.[0].thumbnails.small.url || '/images/logo.png'}
+      {imagem?.[0].thumbnails.large.url ? <Image
+        src={imagem?.[0].thumbnails.large.url || '/images/logo.png'}
         alt={nome}
         width={100}
         height={100}
         className='h-full min-w-[100px] w-[100px] object-cover'
-      />
+      /> : <div className={`w-[100px] min-w-[100px] h-full
+        flex flex-col justify-center items-center
+        border-r border-spacing-1
+      `}>
+        <p className={`whitespace-nowrap text-2xl`}>
+          {codigo}
+        </p>
+      </div>}
       <div className={`
-        ml-2 w-full flex flex-col justify-between
+        ml-4 w-full flex flex-col justify-between
       `}>
         <h1 className={`text-lg font-bold`}>
           {nome}

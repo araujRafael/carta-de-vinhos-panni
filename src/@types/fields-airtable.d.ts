@@ -1,6 +1,6 @@
 export interface VinhosField {
   descrição: string
-  imagem: Imagem[]
+  imagem?: Imagem[]
   desconto: number
   "em estoque": boolean
   uva: string
